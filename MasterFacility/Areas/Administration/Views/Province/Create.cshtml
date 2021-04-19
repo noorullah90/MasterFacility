@@ -1,0 +1,30 @@
+﻿@model MasterFacility.Data.Models.Lookups.province
+@using Westwind.Globalization
+
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create" data-fouc data-ajax="true" id="modalForm" data-ajax-method="POST" data-ajax-success="onSuccessHandler(this,data,true,false)" data-ajax-begin="onLoadingHandler(this)">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+           
+            <div class="form-group">
+                <label asp-for="name" class="control-label"></label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="namedari" class="control-label"></label>
+                <input asp-for="namedari" class="form-control" />
+                <span asp-validation-for="namedari" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="namepashto" class="control-label"></label>
+                <input asp-for="namepashto" class="form-control" />
+                <span asp-validation-for="namepashto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">@DbRes.T("Save", "Common")</button>
+            </div>
+        </form>
+    </div>
+</div>
+

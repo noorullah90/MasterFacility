@@ -1,0 +1,37 @@
+﻿@model IEnumerable<MasterFacility.Data.Models.Lookups.province>
+
+<table class="table table-striped table-sm">
+    <thead>
+        <tr>
+            <th>
+               <input type="checkbox" class="provinceCheckbox" id="selectAll" />
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.namedari)
+            </th>
+           
+            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                  <input type="checkbox" class="provinceCheckbox" id="@item.id" value="@item.id" /> @item.name
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.namedari)
+            </td>
+           
+           
+           
+        </tr>
+}
+    </tbody>
+</table>
+
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary" id="provincesSaveBtn" onclick="saveProvince(this)" >Click Me</button>
+</div>

@@ -1,0 +1,174 @@
+﻿@using Westwind.Globalization
+
+<!-- BEGIN BASE JS -->
+<script src="~/assets/vendor/jquery/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/assets/vendor/popper.js/umd/popper.min.js"></script>
+<script src="~/assets/vendor/bootstrap/js/bootstrap.min.js"></script> <!-- END BASE JS -->
+<!-- BEGIN PLUGINS JS -->
+<script src="~/assets/vendor/pace-progress/pace.min.js"></script>
+<script src="~/assets/vendor/stacked-menu/js/stacked-menu.min.js"></script>
+<script src="~/assets/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<script src="~/assets/vendor/toastr/build/toastr.min.js"></script>
+<script src="~/assets/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="~/assets/vendor/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="~/assets/vendor/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+<script src="~/assets/vendor/typeahead.js/typeahead.bundle.min.js"></script>
+<script src="~/assets/vendor/sortablejs/Sortable.min.js"></script>
+<script src="~/assets/vendor/nestable2/jquery.nestable.min.js"></script>
+<script src="~/assets/vendor/DocumentViewer/EZView.js"></script>
+<script src="~/assets/vendor/DocumentViewer/draggable.js"></script>
+<script src="~/js/ApplicationScripts/appConf.js"></script>
+
+<!-- END PLUGINS JS -->
+<!-- BEGIN THEME JS -->
+<script src="~/assets/javascript/theme.js"></script> <!-- END THEME JS -->
+<!-- BEGIN PAGE LEVEL JS -->
+<script src="~/assets/javascript/pages/dataTables.bootstrap.js"></script>
+<!-- END PAGE LEVEL JS -->
+<!-- BEGIN HELPER JS -->
+<script src="~/assets/javascript/select2.min.js"></script>
+<script src="~/lib/limonte-sweetalert2/sweetalert2.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.bootstrap.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.html5.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.print.js"></script>
+
+<script src="~/js/custom-datatable.js"></script>
+<script src="~/js/PerisandatePicker.js"></script>
+<!-- END HELPER JS -->
+<script>
+    window.dataLayer = window.dataLayer || [];
+    $(function () {
+        $(".only-english").bind("keydown", function (event) {
+            var ew = event.which;
+            if (ew == 32)
+                return true;
+            if (48 <= ew && ew <= 57)
+                return true;
+            if (65 <= ew && ew <= 90)
+                return true;
+            if (97 <= ew && ew <= 122)
+                return true;
+            return false;
+        });
+    })
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-116692175-1');
+</script>
+
+<!-- Custom helper JavaScript -->
+<script src="~/js/helper.js"></script>
+
+
+<script type="text/javascript">
+
+    persian_date_picker();
+    tableToDatatable();
+
+    function tableToDatatable() {
+        $('.generalTable').DataTable({
+            responsive: true,
+            dom: "Bfrtip",
+            lengthChange: false,
+            buttons: [{
+                text: '<i class=" text-success fa fa-2x fa-file-excel"></i>',
+                extend: 'excel'
+            }, {
+                text: '<i class=" text-primary fa fa-2x fa-print"></i>',
+                extend: 'print'
+            }
+            ],
+            "bInfo": true,
+            "bFilter": true,
+            "bStateSave": false,
+            "sScrollX": "100%",
+            "oLanguage": {
+                paginate: {
+                    previous: '<i class="fa fa-lg fa-angle-left"></i>',
+                    next: '<i class="fa fa-lg fa-angle-right"></i>'
+                },
+                "sSearch": window.datatable_search,
+                "buttons": 'excel',
+                "sLengthMenu": window.datatable_lengthMenu,
+                "sInfo": window.datatable_info,
+                "sZeroRecords": window.datatable_zeroRecord,
+                "sInfoEmpty": window.datatable_infoEmpty,
+                "sInfoFiltered": window.datatable_infoFiltered,
+                "oPaginate": {
+                    "sFirst": window.datatable_first,
+                    "sLast": window.datatable_last,
+                    "sNext": window.datatable_next,
+                    "sPrevious": window.datatable_previous,
+                }
+            }
+        });
+    }
+
+
+    function generateRowDetailDataTable() {
+
+
+        var table = $('.rowDetailDataTable ').DataTable({
+            responsive: false,
+            dom: "<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>\n<'table-responsive'tr>\n<'row align-items-center'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 d-flex justify-content-end'p>>",
+            "bInfo": true,
+            "bFilter": true,
+            "bStateSave": false,
+            "sScrollX": "100%",
+            "oLanguage": {
+                paginate: {
+                    previous: '<i class="fa fa-lg fa-angle-left"></i>',
+                    next: '<i class="fa fa-lg fa-angle-right"></i>'
+                },
+                "sSearch": window.datatable_search,
+                "sLengthMenu": window.datatable_lengthMenu,
+                "sInfo": window.datatable_info,
+                "sZeroRecords": window.datatable_zeroRecord,
+                "sInfoEmpty": window.datatable_infoEmpty,
+                "sInfoFiltered": window.datatable_infoFiltered,
+                "oPaginate": {
+                    "sFirst": window.datatable_first,
+                    "sLast": window.datatable_last,
+                    "sNext": window.datatable_next,
+                    "sPrevious": window.datatable_previous,
+                }
+            }
+
+        });
+
+        // Add event listener for opening and closing details
+        $('.rowDetailDataTable tbody').on('click', 'td.details-control', function () {
+
+            var expandAndCollapseButton = $(this).find("button");
+
+            var tr = $(this).closest('tr');
+            var row = table.row(tr);
+            var rowDetail = tr.find("td:eq(6) .rowDetail").html();
+            if (row.child.isShown()) {
+                // This row is already open - close it
+                row.child.hide();
+                tr.removeClass('shown');
+                expandAndCollapseButton.addClass("collapsed");
+                expandAndCollapseButton.attr("aria-expanded", "false");
+            }
+            else {
+                // Open this row
+                row.child(rowDetail).show();
+                tr.addClass('shown');
+                expandAndCollapseButton.removeClass("collapsed");
+                expandAndCollapseButton.attr("aria-expanded", "true");
+            }
+        });
+
+    }
+
+    $('.documentViewer').EZView();
+
+
+</script>

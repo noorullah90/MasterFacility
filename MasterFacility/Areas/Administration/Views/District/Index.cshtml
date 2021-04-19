@@ -1,0 +1,81 @@
+﻿@using Westwind.Globalization
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="page">
+    <div class="page-inner">
+        <header class="page-title-bar">
+            <div class="d-flex flex-column flex-md-row">
+                <p class="lead">
+                    <span class="font-weight-bold">@DbRes.T("AllDistrict", "District")</span>
+                </p>
+
+            </div>
+        </header>
+        <div class="card">
+
+            <div class="card-body">
+                <div class="row">
+                    <!-- .col -->
+                    <div class="col">
+                        <select type="text" class="form-control" placeholder="Search" id="provinceList"></select>
+                    </div><!-- /.col -->
+                    <!-- .col -->
+                    <div class="col-auto d-none d-sm-flex">
+                        <select class="form-control" id="activationFilterElement">
+                            <option value="true"> Only Active</option>
+                            <option value="false"> Only Deactivated</option>
+                        </select>
+                    </div><!-- /.col -->
+                </div>
+            </div>
+
+            <div class="card-body">
+
+                <table id="example" class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>@DbRes.T("Province", "Common")</th>
+                            <th>@DbRes.T("Name", "Common")</th>
+                            <th>@DbRes.T("NameDari", "Common")</th>
+                            <th>@DbRes.T("NamePashto", "Common")</th>
+                            <th>@DbRes.T("IsActive", "Common")</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <button type="button" data-toggle="ajax-modal" data-target="#exampleModalLong" data-callback="CreateFormInitialization" data-url="/Administration/District/Create" data-modal-title="@DbRes.T("CreateNew", "Provinces")" class="btn btn-primary btn-floated"><span class="fa fa-plus"></span></button>
+    </div>
+
+
+
+</div>
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongLabel" aria-hidden="true">
+    <!-- .modal-dialog -->
+    <div class="modal-dialog modal-lg" role="document">
+        <!-- .modal-content -->
+        <div class="modal-content">
+            <!-- .modal-header -->
+            <div class="modal-header">
+                <h5 class="modal-title"> Modal title </h5>
+            </div><!-- /.modal-header -->
+            <!-- .modal-body -->
+            <div class="modal-body">
+            </div><!-- /.modal-body -->
+
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+@section scripts{
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/js/ApplicationScripts/Common/inputFilter.js"></script>
+    <script src="~/js/ApplicationScripts/Common/modalHandler.js"></script>
+    <script src="~/js/ApplicationScripts/districtManagement.js"></script>
+}

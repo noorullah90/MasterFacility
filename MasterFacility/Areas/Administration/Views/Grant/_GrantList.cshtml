@@ -1,0 +1,64 @@
+﻿@model IEnumerable<MasterFacility.Data.Models.Grants.grant>
+@using Westwind.Globalization
+
+<div class="card">
+    <div class="card-body">
+        <table class="table" id="GrantTable">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.code)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.implementerid)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.programcode)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.startdate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.enddate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.isactive)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.code)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.implementerid)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.programcode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.startdate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.enddate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.isactive)
+                    </td>
+
+                    <td>
+                        <button data-toggle="ajax-modal" data-callback="CreateFormInitialization" data-target="#exampleModalLong" data-url="/Administration/Grant/Edit/@item.code" class="btn btn-sm btn-icon btn-secondary"><i class="fa fa-pencil-alt"></i> <span class="sr-only">Edit</span></button>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

@@ -1,0 +1,37 @@
+﻿@model MasterFacility.Data.Models.Lookups.lookup
+@using Westwind.Globalization
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>lookup</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create" data-fouc data-ajax="true" data-ajax-method="POST" data-ajax-success="onSuccessHandler(this,data,true,false, listLookups)" data-ajax-begin="onLoadingHandler(this)">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="name" class="control-label">@DbRes.T("Name", "Common")</label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="namedari" class="control-label">@DbRes.T("NameDari", "Common")</label>
+                <input asp-for="namedari" class="form-control" />
+                <span asp-validation-for="namedari" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="namepashto" class="control-label">@DbRes.T("NamePashto", "Common")</label>
+                <input asp-for="namepashto" class="form-control" />
+                <span asp-validation-for="namepashto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" id="SaveBTN" value="Create" class="btn btn-primary">@DbRes.T("Save", "Common")</button>
+            </div>
+        </form>
+    </div>
+</div>
+

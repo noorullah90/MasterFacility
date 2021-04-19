@@ -1,0 +1,67 @@
+﻿@inject MasterFacility.Services.Culture.ICulture _culture
+@using Westwind.Globalization
+
+<!-- FAVICONS -->
+<link rel="apple-touch-icon" sizes="144x144" href="~/assets/apple-touch-icon.png">
+<link rel="shortcut icon" href="~/assets/favicon.ico">
+<meta name="theme-color" content="#3063A0"><!-- End FAVICONS -->
+<!-- BEGIN PLUGINS STYLES -->
+<link rel="stylesheet" href="~/assets/vendor/open-iconic/font/css/open-iconic-bootstrap.min.css">
+<link rel="stylesheet" href="~/assets/vendor/flatpickr/flatpickr.min.css">
+<link href="~/assets/vendor/dropify/dist/css/dropify.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="~/assets/vendor/toastr/build/toastr.min.css">
+<link href="~/assets/vendor/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="~/assets/vendor/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
+<!-- END PLUGINS STYLES -->
+<!-- BEGIN THEME STYLES -->
+
+
+@if (_culture.GetLanguageId() == 1)
+    {
+<link rel="stylesheet" href="~/assets/stylesheets/theme.css" data-skin="default">
+<link rel="stylesheet" href="~/assets/stylesheets/theme-dark.css" data-skin="dark">
+<link rel="stylesheet" href="~/assets/vendor/fontawesome/fontawesome-free/css/all.min.css">
+<link rel="stylesheet" href="~/assets/stylesheets/custom.css">
+    }
+    else
+    {
+<link rel="stylesheet" href="~/assets/stylesheets/theme-rtl.css" data-skin="default">
+<link rel="stylesheet" href="~/assets/stylesheets/theme-dark-rtl.css" data-skin="dark">
+<link rel="stylesheet" href="~/assets/vendor/fontawesome/fontawesome-free/css/all.min-rtl.css">
+<link rel="stylesheet" href="~/assets/stylesheets/custom-rtl.css">
+    }
+@*<link href="~/assets/vendor/font-awesome/css/font-awesome.css" rel="stylesheet" />*@
+<link rel="stylesheet" href="~/assets/stylesheets/both-theme.css">
+
+<link href="~/css/site.css" rel="stylesheet" />
+<link rel="stylesheet" href="~/assets/vendor/select2/css/select2.min.css">
+<link href="~/lib/limonte-sweetalert2/sweetalert2.css" rel="stylesheet" />
+<link href="~/lib/alertify.js/alertify.core.css" rel="stylesheet" />
+<link href="~/lib/alertify.js/alertify.default.css" rel="stylesheet" />
+<link href="~/assets/stylesheets/persianDatepicker-default.css" rel="stylesheet" />
+<link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/themes/blitzer/jquery-ui.css" rel="stylesheet" type="text/css" />
+   
+<script>
+    var skin = localStorage.getItem('skin') || 'default';
+    var isCompact = JSON.parse(localStorage.getItem('hasCompactMenu'));
+    var disabledSkinStylesheet = document.querySelector('link[data-skin]:not([data-skin="' + skin + '"])');
+    // Disable unused skin immediately
+    disabledSkinStylesheet.setAttribute('rel', '');
+    disabledSkinStylesheet.setAttribute('disabled', true);
+    // add flag class to html immediately
+    if (isCompact == true) document.querySelector('html').classList.add('preparing-compact-menu');
+</script><!-- END THEME STYLES -->
+<!-- customized theme CSS -->
+@*<script>
+        var language_id = @_culture.GetLanguageId();
+        var datatable_search = "@DbRes.T("Search", "DataTable") : ";
+        var datatable_lengthMenu = "@DbRes.T("LengthMenu", "DataTable")";
+        var datatable_info = "@DbRes.T("Info", "DataTable")";
+        var datatable_zeroRecord = "@DbRes.T("ZeroRecord", "DataTable")";
+        var datatable_infoEmpty = "@DbRes.T("InfoEmpty", "DataTable")";
+        var datatable_infoFiltered = "@DbRes.T("InfoFiltered", "DataTable")";
+        var datatable_first = "@DbRes.T("First", "DataTable")";
+        var datatable_last = "@DbRes.T("Last", "DataTable")";
+        var datatable_next = "@DbRes.T("Next", "DataTable")";
+        var datatable_previous = "@DbRes.T("Previous", "DataTable")";
+    </script>*@

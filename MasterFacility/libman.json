@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "defaultProvider": "jsdelivr",
+  "libraries": [
+    {
+      "library": "jquery-ajax-unobtrusive@3.2.6",
+      "destination": "wwwroot/lib/jquery-ajax-unobtrusive/"
+    },
+    {
+      "provider": "cdnjs",
+      "library": "sweetalert@2.1.2",
+      "destination": "wwwroot/lib/alerts/sweetalert/"
+    }
+  ]
+}

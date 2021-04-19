@@ -1,0 +1,66 @@
+﻿@model IEnumerable<MasterFacility.Data.Models.Lookups.lookupitem>
+@using Westwind.Globalization
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.lookupid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hmisid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.namedari)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.namepashto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.isactive)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.lookup.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.hmisid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.namedari)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.namepashto)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.isactive)
+                </td>
+                <td>
+                    <button data-toggle="ajax-modal" data-target="#exampleModalLong" data-url="/administration/lookups/EditItem/@item.id" data-modal-title="@DbRes.T("Update", "Common")" data-callback="editItemConfig" class="btn btn-sm btn-icon btn-secondary"><i class="fa fa-pencil-alt"></i> <span class="sr-only">@DbRes.T("Update", "Common")</span></button>
+                    <button data-toggle="ajax-modal" data-target="#exampleModalLong" data-url="/administration/lookups/ItemDetail/@item.id" data-modal-title="@DbRes.T("Update", "Common")" class="btn btn-sm btn-icon btn-secondary"><i class="fa fa-eye"></i> <span class="sr-only">@DbRes.T("Update", "Common")</span></button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

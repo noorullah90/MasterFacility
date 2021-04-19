@@ -1,0 +1,88 @@
+﻿@using Westwind.Globalization
+@{
+    ViewData["Title"] = "Items";
+}
+
+<header class="page-title-bar">
+    <div class="d-flex flex-column flex-md-row">
+        <p class="lead">
+            <span class="font-weight-bold">@DbRes.T("ListOfFacilityTypeCategories", "Lookups")</span>
+        </p>
+        <div class="ml-auto">
+        </div>
+    </div>
+</header>
+<h1></h1>
+<div class="card card-fluid">
+    <div class="card-body" id="dataList">
+
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongLabel" aria-hidden="true">
+    <!-- .modal-dialog -->
+    <div class="modal-dialog modal-lg" role="document">
+        <!-- .modal-content -->
+        <div class="modal-content">
+            <!-- .modal-header -->
+            <div class="modal-header">
+                <h5 class="modal-title"> Modal title </h5>
+            </div><!-- /.modal-header -->
+            <!-- .modal-body -->
+            <div class="modal-body">
+            </div><!-- /.modal-body -->
+
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<button type="button" data-toggle="ajax-modal" data-target="#exampleModalLong" data-callback="newItemFormDropdowns"  data-url="/Administration/Lookups/CreateItem" data-modal-title="@DbRes.T("New", "Common")" class="btn btn-success btn-floated"><span class="fa fa-plus"></span></button> <!-- /floating action -->
+
+@section scripts{
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/js/ApplicationScripts/Common/modalHandler.js"></script>
+    <script src="~/js/extensions/inputFilter.js"></script>
+
+    <script>
+        $(function () {
+            listLookups();
+        });
+        function listLookups() {
+            $('#dataList').load('/Administration/Lookups/listofItems', function () {
+                $('#LookupTable').DataTable({
+                    drawCallback: function () {
+                        modalIntial();
+                    }
+                });
+                modalIntial();
+            })
+        }
+
+        function newItemFormDropdowns() {
+            $("#hmisid").inputFilter(function (value) {
+                return /^-?\d*$/.test(value);
+            });
+            $('.select2').select2();
+            fillDropDownByURL('lookupid', '/Lookups/ListLookupCategories');
+            $('#lookupid').on('change', function () {
+                let value = $(this).find(":selected").val();
+                console.log(value);
+                fillDropDownByLookup('parentid', value);
+            })
+        }
+
+        function editItemConfig() {
+            $("#hmisid").inputFilter(function (value) {
+                return /^-?\d*$/.test(value);
+            });
+            $('.select2').select2();
+            fillDropDownByURL('lookupid', '/Lookups/ListLookupCategories');
+            fillDropDownByLookup('parentid', null, 'lookupid');
+            $('#lookupid').on('change', function () {
+                let value = $(this).find(":selected").val();
+                fillDropDownByLookup('parentid', value);
+            })
+        }
+    </script>
+}

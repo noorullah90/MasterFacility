@@ -1,0 +1,46 @@
+﻿@model MasterFacility.Data.Models.Grants.grant
+@using Westwind.Globalization
+
+@{ ViewData["Title"] = "Create"; }
+
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create" data-fouc data-ajax="true" id="modalForm" data-ajax-method="POST" data-ajax-success="onSuccessHandler(this,data,true,false)" data-ajax-begin="onLoadingHandler(this)">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="code" class="control-label"></label>
+                <input asp-for="code" class="form-control" />
+                <span asp-validation-for="code" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="implementerid" class="control-label"></label>
+                <select asp-for="implementerid" class="form-control"></select>
+                <span asp-validation-for="implementerid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="programcode" class="control-label"></label>
+                <input asp-for="programcode" class="form-control" />
+                <span asp-validation-for="programcode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="startdate" class="control-label"></label>
+                <input asp-for="startdate" class="form-control" />
+                <span asp-validation-for="startdate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="enddate" class="control-label"></label>
+                <input asp-for="enddate" class="form-control" />
+                <span asp-validation-for="enddate" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="isactive" /> @Html.DisplayNameFor(model => model.isactive)
+                </label>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">@DbRes.T("Save", "Common")</button>
+            </div>
+        </form>
+    </div>
+</div>

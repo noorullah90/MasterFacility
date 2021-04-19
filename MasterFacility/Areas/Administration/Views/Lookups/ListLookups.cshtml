@@ -1,0 +1,48 @@
+﻿@model IEnumerable<MasterFacility.Data.Models.Lookups.lookup>
+@using Westwind.Globalization
+@{
+    ViewData["Title"] = "ListLookups";
+}
+
+
+<table class="table table-striped table-sm" id="LookupTable">
+    <thead>
+        <tr>
+            <th>
+                @DbRes.T("Id", "Common")
+            </th>
+            <th>
+                @DbRes.T("Name", "Common")
+            </th>
+            <th>
+                @DbRes.T("NameDari", "Common")
+            </th>
+            <th>
+                @DbRes.T("NamePashto", "Common")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.namedari)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.namepashto)
+                </td>
+                <td>
+                    <button data-toggle="ajax-modal" data-target="#exampleModalLong" data-url="/administration/lookups/Edit/@item.id" data-modal-title="@DbRes.T("Update", "Common")" class="btn btn-sm btn-icon btn-secondary"><i class="fa fa-pencil-alt"></i> <span class="sr-only">Edit</span></button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

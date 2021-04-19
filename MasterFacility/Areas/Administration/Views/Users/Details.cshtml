@@ -1,0 +1,79 @@
+﻿@model MasterFacility.Data.Models.Identity.AppUser
+    <header class="page-cover">
+        <div class="text-center">
+            <a href="user-profile.html" class="user-avatar user-avatar-xl"><img src="~/assets/images/avatars/profile.jpg" alt=""></a>
+            <h2 class="h4 mt-2 mb-0"> @Model.FirstName @Model.LastName </h2>
+           
+            <p class="text-muted"> @Model.UserName  </p>
+        </div><!-- .cover-controls -->
+        
+    </header>
+
+    <div class="nav-scroller border-bottom">
+        <!-- .nav-tabs -->
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active show" data-toggle="tab" href="#client-billing-contact">Bio Info</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#client-tasks">Granted Province(s)</a>
+            </li>
+            
+        </ul><!-- /.nav-tabs -->
+    </div><!-- /.nav-scroller -->
+    <!-- .tab-content -->
+    <div class="tab-content pt-4" id="clientDetailsTabs">
+        <!-- .tab-pane -->
+        <div class="tab-pane fade show active" id="client-billing-contact" role="tabpanel" aria-labelledby="client-billing-contact-tab">
+            <!-- .card -->
+            <div class="card">
+                <!-- .card-body -->
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h2 id="client-billing-contact-tab" class="card-title"> @Model.UserName </h2><button type="button" class="btn btn-link" data-toggle="ajax-modal" data-target="#exampleModalLong" data-url="/Administration/Users/Edit/@Model.Id"  data-modal-title="edit">Edit</button>
+                    </div>
+                    <span>
+                        <string>FirstName:</string> @Model.FirstName <br />
+                        <string>Lastname:</string> @Model.LastName <br />
+                        <string>Phone:</string> @Model.PhoneNumber<br />
+                        <string>IsLocked:</string> @Html.DisplayFor(model => model.LockoutEnabled)<br />
+                    </span>
+                </div><!-- /.card-body -->
+            </div><!-- /.card -->
+        </div><!-- /.tab-pane -->
+        <!-- .tab-pane -->
+        <div class="tab-pane fade" id="client-tasks" role="tabpanel" aria-labelledby="client-tasks-tab">
+            <!-- .card -->
+            <div class="card">
+                <!-- .card-body -->
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <h3 id="client-tasks-tab" class="card-title"> List of provinces </h3>
+                        <div class="card-title-control">
+                            <button type="button" class="btn btn-icon btn-light" data-toggle="ajax-modal" data-target="#exampleModalScrollable" data-url="/Administration/Users/AddProvinces/@Model.Id" data-callback="addProvince" data-modal-title="edit"><i class="fa fa-plus-circle mr-1"></i></button>
+                            
+                        </div>
+                    </div>
+                    <div class="todo-list todo-list-bordered" data-toggle="sortable" data-draggable=".todo" data-handle=".drag-handle">
+                      <table class="table table-striped table-sm">
+                          <tbody>
+                              @foreach (var item in Model.GrantedProvinces)
+                              {
+                                  <tr>
+                                      <td>
+                                          @item.Province.name
+                                      </td>
+                                      <td>
+                                          <button data-toggle="delete"  data-url="/Administration/users/DeleteProvince" data-id="@item.Id" data-callback="reloadCurrentRecord" class="btn btn-sm btn-icon btn-secondary"><i class="fa fa-trash"></i> <span class="sr-only"></span></button>
+                                      </td>
+                                  </tr>
+                              }
+                          </tbody>
+                      </table>
+                      
+                    </div>
+                </div><!-- /.card-body -->
+            </div><!-- /.card -->
+        </div>
+    </div><!-- /.tab-content -->
+    

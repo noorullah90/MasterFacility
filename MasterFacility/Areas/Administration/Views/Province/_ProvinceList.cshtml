@@ -1,0 +1,57 @@
+﻿@model IEnumerable<MasterFacility.Data.Models.Lookups.province>
+@using Westwind.Globalization
+
+<div class="card">
+    <div class="card-body">
+        <table class="table" id="provinceTable">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.id)
+                    </th>
+                  
+                    <th>
+                        @Html.DisplayNameFor(model => model.name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.namedari)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.namepashto)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.isactive)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.id)
+                        </td>
+                        
+                        <td>
+                            @Html.DisplayFor(modelItem => item.name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.namedari)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.namepashto)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.isactive)
+                        </td>
+                        <td>
+                            <button data-toggle="ajax-modal" data-target="#exampleModalLong" data-url="/Administration/Province/Edit/@item.id" data-modal-title="@DbRes.T("UpdateProvince", "Provinces")" class="btn btn-sm btn-icon btn-secondary"><i class="fa fa-pencil-alt"></i> <span class="sr-only">Edit</span></button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

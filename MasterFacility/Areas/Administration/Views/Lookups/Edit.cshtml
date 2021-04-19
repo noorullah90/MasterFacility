@@ -1,0 +1,34 @@
+﻿@model MasterFacility.Data.Models.Lookups.lookup
+@using Westwind.Globalization
+
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Edit" data-fouc data-ajax="true" id="modalForm" data-ajax-method="POST" data-ajax-success="onSuccessHandler(this,data)" data-ajax-begin="onLoadingHandler(this)">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="id" class="control-label"></label>
+                <input asp-for="id" disabled class="form-control" />
+                <span asp-validation-for="id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="name" class="control-label">@DbRes.T("Name", "Common")</label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="namedari" class="control-label">@DbRes.T("NameDari", "Common")</label>
+                <input asp-for="namedari" class="form-control" />
+                <span asp-validation-for="namedari" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="namepashto" class="control-label">@DbRes.T("NamePashto", "Common")</label>
+                <input asp-for="namepashto" class="form-control" />
+                <span asp-validation-for="namepashto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" id="SaveBTN" class="btn btn-primary">@DbRes.T("Update", "Common")</button>
+            </div>
+        </form>
+    </div>
+</div>
+

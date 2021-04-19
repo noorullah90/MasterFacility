@@ -1,0 +1,106 @@
+﻿@using Westwind.Globalization
+
+<!-- .page -->
+<div class="page has-sidebar has-sidebar-fluid has-sidebar-expand-xl">
+    <!-- .page-inner -->
+    <div class="page-inner page-inner-fill position-relative">
+        <header class="page-navs bg-light shadow-sm">
+            <!-- .input-group -->
+            <div class="input-group has-clearable">
+                <button type="button" class="close" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times-circle"></i></span></button> <label class="input-group-prepend" for="searchClients"><span class="input-group-text"><span class="oi oi-magnifying-glass"></span></span></label> <input type="text" class="form-control" id="searchClients" data-filter=".board .list-group-item" placeholder="Find clients">
+            </div><!-- /.input-group -->
+        </header><button type="button" class="btn btn-primary btn-floated position-absolute" data-toggle="ajax-modal" data-target="#exampleModalLong" data-url="/Administration/Users/Register" data-modal-title="@DbRes.T("New", "Common")"><i class="fa fa-plus"></i></button> <!-- board -->
+        <div class="board p-0 perfect-scrollbar">
+            <!-- .list-group -->
+            <div class="list-group list-group-flush list-group-divider border-top" data-toggle="radiolist" id="usersContainer">
+                <!-- .list-group-item -->
+                <div class="list-group-item" id="progressDom">
+                    <!-- .list-group-item-body -->
+                    <div class="list-group-item-body text-center py-4">
+                        <!-- .spinner -->
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div><!-- /.spinner -->
+                    </div><!-- /.list-group-item-body -->
+                </div><!-- /.list-group-item -->
+            </div><!-- /.list-group -->
+        </div><!-- /board -->
+    </div><!-- /.page-inner -->
+    <!-- .page-sidebar -->
+    <div class="page-sidebar bg-light">
+        <!-- .sidebar-header -->
+        <header class="sidebar-header d-xl-none">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active">
+                        <a href="#" onclick="Looper.toggleSidebar()"><i class="breadcrumb-icon fa fa-angle-left mr-2"></i>Back</a>
+                    </li>
+                </ol>
+            </nav>
+        </header><!-- /.sidebar-header -->
+        <!-- .sidebar-section -->
+        <div class="sidebar-section sidebar-section-fill " id="user-section">
+            <div id="notfound-state" class="empty-state">
+                <!-- .empty-state-container -->
+                <div class="empty-state-container">
+                    <div class="state-figure">
+                        <img class="img-fluid" src="~/assets/images/illustration/img-6.svg" alt="" style="max-width: 300px">
+                    </div>
+                    <h3 class="state-header"> No Content, Yet. </h3>
+                    <p class="state-description lead text-muted"> Use the button below to add your awesomething, aperiam ex veniam suscipit porro ab saepe nobis odio. </p>
+                    <div class="state-action">
+                        <a href="#" class="btn btn-primary">Create New</a>
+                    </div>
+                    <div class="btn btn-light fileinput-button">
+                        <i class="oi oi-cloud-upload mr-1"></i> <span>Import File</span> <input id="fileupload-btn" type="file" name="file">
+                    </div>
+                </div><!-- /.empty-state-container -->
+            </div>
+        </div><!-- /.sidebar-section -->
+    </div><!-- /.page-sidebar -->
+    <!-- Keep in mind that modals should be placed outsite of page sidebar -->
+    <!-- .modal -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongLabel" aria-hidden="true">
+        <!-- .modal-dialog -->
+        <div class="modal-dialog" role="document">
+            <!-- .modal-content -->
+            <div class="modal-content">
+                <!-- .modal-header -->
+                <div class="modal-header">
+                    <h5 class="modal-title"> Modal title </h5>
+                </div><!-- /.modal-header -->
+                <!-- .modal-body -->
+                <div class="modal-body">
+                </div><!-- /.modal-body -->
+
+
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- Normal modal -->
+    <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableLabel" aria-hidden="true">
+        <!-- .modal-dialog -->
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <!-- .modal-content -->
+            <div class="modal-content">
+                <!-- .modal-header -->
+                <div class="modal-header">
+                    <h5 id="exampleModalScrollableLabel" class="modal-title"> Modal title </h5>
+                </div><!-- /.modal-header -->
+                <!-- .modal-body -->
+                <div class="modal-body">
+                    </div><!-- /.modal-body -->
+               
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</div><!-- /.page -->
+
+
+@section scripts{
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/lib/alerts/sweetalert/sweetalert.min.js"></script>
+    <script src="~/js/ApplicationScripts/Common/modalHandler.js"></script>
+    <script src="~/js/ApplicationScripts/Common/recordDeleteHandler.js"></script>
+    <script src="~/js/ApplicationScripts/userManagement.js"></script>
+}

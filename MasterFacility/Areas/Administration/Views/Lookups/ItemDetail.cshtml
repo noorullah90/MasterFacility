@@ -1,0 +1,177 @@
+﻿@model MasterFacility.Data.Models.Lookups.lookupitem
+
+
+<table class="table">
+    <tr>
+        <td>
+            <strong>
+                @Html.DisplayNameFor(model => model.id)
+            </strong>
+            <br />
+            @Html.DisplayFor(model => model.id)
+        </td>
+        <td>
+            <strong>
+                @Html.DisplayNameFor(model => model.name)
+            </strong>
+            <br />
+            @Html.DisplayFor(model => model.name)
+        </td>
+        <td>
+            <strong>
+                @Html.DisplayNameFor(model => model.namedari)
+            </strong>
+            <br />
+            @Html.DisplayFor(model => model.namedari)
+        </td>
+        <td>
+            <strong>
+                @Html.DisplayNameFor(model => model.namepashto)
+            </strong>
+            <br />
+            @Html.DisplayFor(model => model.namepashto)
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            <strong>
+                @Html.DisplayNameFor(model => model.order)
+            </strong>
+            <br />
+            @Html.DisplayFor(model => model.order)
+        </td>
+        <td>
+            <strong>
+                @Html.DisplayNameFor(model => model.hmisid)
+            </strong>
+            <br />
+            @Html.DisplayFor(model => model.hmisid)
+        </td>
+        <td>
+            <strong>
+                @Html.DisplayNameFor(model => model.isactive)
+            </strong>
+            <br />
+            @Html.DisplayFor(model => model.isactive)
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            Lookup category
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>
+                @Html.DisplayNameFor(model => model.lookup.id)
+            </strong>
+            <br />
+            @Html.DisplayFor(model => model.lookup.id)
+        </td>
+        <td>
+            <strong>
+                @Html.DisplayNameFor(model => model.lookup.name)
+            </strong>
+            <br />
+            @Html.DisplayFor(model => model.lookup.name)
+        </td>
+        <td>
+            <strong>
+                @Html.DisplayNameFor(model => model.lookup.namedari)
+            </strong>
+            <br />
+            @Html.DisplayFor(model => model.lookup.namedari)
+        </td>
+        <td>
+            <strong>
+                @Html.DisplayNameFor(model => model.lookup.namepashto)
+            </strong>
+            <br />
+            @Html.DisplayFor(model => model.lookup.namepashto)
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            parent
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>
+                @Html.DisplayNameFor(model => model.parent.id)
+            </strong>
+            <br />
+            @Html.DisplayFor(model => model.parent.id)
+        </td>
+        <td>
+            <strong>
+                @Html.DisplayNameFor(model => model.parent.name)
+            </strong>
+            <br />
+            @Html.DisplayFor(model => model.parent.name)
+        </td>
+        <td>
+            <strong>
+                @Html.DisplayNameFor(model => model.parent.namedari)
+            </strong>
+            <br />
+            @Html.DisplayFor(model => model.parent.namedari)
+        </td>
+        <td>
+            <strong>
+                @Html.DisplayNameFor(model => model.parent.namepashto)
+            </strong>
+            <br />
+            @Html.DisplayFor(model => model.parent.namepashto)
+        </td>
+    </tr>
+    @{
+        if (Model.lookupitems.Count > 0)
+        {
+            <tr>
+                <td colspan="4">
+                    Childs
+                </td>
+            </tr>
+                foreach (var item in Model.lookupitems)
+                {
+                    <tr>
+                        <td>
+                            <strong>
+                                id
+                            </strong>
+                            <br />
+                            @item.id
+                        </td>
+                        <td>
+                            <strong>
+                                Name
+                            </strong>
+                            <br />
+                            @item.name
+                        </td>
+                        <td>
+                            <strong>
+                                Name dari
+                            </strong>
+                            <br />
+                            @item.namedari
+                        </td>
+                        <td>
+                            <strong>
+                                Name Pastho
+                            </strong>
+                            <br />
+                            @item.namepashto
+                        </td>
+                    </tr>
+                }
+            }
+    }
+
+</table>

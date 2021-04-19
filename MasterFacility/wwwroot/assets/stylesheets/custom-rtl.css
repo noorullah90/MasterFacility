@@ -1,0 +1,457 @@
+/* put your own styles to customize and override the theme */
+
+.menu-dropdown-left{
+	position: absolute!important;
+    will-change: top, left!important;
+    top: -6px;
+    right: 0px!important;
+}
+
+.breadcrumb-icon{
+	transform: rotate(180deg);
+
+}
+
+.field-validation-error {
+    font-size: 12px;
+    color: #B76BA3;
+    position: relative;
+    top: 5px;
+}
+
+
+.display-none {
+    display: none !important
+}
+
+.custom-label {
+    font-size: 13px;
+    font-weight: bold
+}
+
+.lang-text{margin-right:5px;}
+
+.post-0 {
+    position: relative !important;
+    top: 0px !important;
+}
+
+
+.modal-header .close {
+    position: absolute !important;
+    top: -10px !important;
+    left: -25px !important;
+    opacity: 1 !important;
+    outline: none !important;
+    z-index: 1050 !important;
+}
+
+    .modal-header .close > span {
+        color: #ff2525 !important;
+        text-shadow: none !important;
+        -webkit-transition: 0.3s !important;
+        transition: 0.3s !important;
+        border: 2px solid #ffffff !important;
+        font-size: 1.8rem !important;
+        display: block !important;
+        background-color: #f5f5f5 !important;
+        padding: 0px 6px !important;
+        opacity: 1 !important;
+        border-radius: 50px !important;
+        box-shadow: 0 0 3px rgba(0,0,0,0.3) !important;
+        max-height: 45px;
+    }
+
+#organizationUnit .dd-item > button {
+    position: absolute !important;
+    right: 1rem !important;
+    top: 1.125rem !important;
+}
+
+.dd-handle {
+    padding: 0.75rem 3rem!important;
+}
+
+.dd-item > button {
+    padding: 0 !important;
+    padding-right: 20px !important;
+}
+
+#spanModalTitle, #extraTitleForModal {
+    position: relative;
+    right: 2px;
+    bottom: 3px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__clear {
+    float: left!important;
+}
+
+#position-relation-form {
+    border-right: 1px solid #e6e6e6;
+    margin-right: 30px;
+    padding-right: 30px;
+}
+
+.profile-img-wrap {
+    height: 120px;
+    position: absolute;
+    width: 120px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.profile-basic {
+    margin-right: 140px;
+}
+
+.profile-img-wrap img {
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+}
+
+.avatar {
+    background-color: #aaa;
+    border-radius: 50%;
+    color: #fff;
+    display: inline-block;
+    font-weight: 500;
+    height: 38px;
+    line-height: 38px;
+    margin: 0 0 0 10px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: middle;
+    width: 38px;
+    position: relative;
+    white-space: nowrap;
+}
+
+    .avatar:hover {
+        color: #fff;
+    }
+
+    .avatar.avatar-xs {
+        width: 24px;
+        height: 24px;
+    }
+
+    .avatar > img {
+        border-radius: 50%;
+        display: block;
+        overflow: hidden;
+        width: 100%;
+    }
+
+.user-name {
+    color: #333;
+}
+
+.profile-img {
+    cursor: pointer;
+    height: 80px;
+    margin: 0 auto;
+    position: relative;
+    width: 80px;
+}
+
+.staff-id {
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.personal-info li .title {
+    color: #4f4f4f;
+    float: right;
+    font-weight: 500;
+    margin-left: 30px;
+    width: 25%;
+}
+
+.personal-info li .text {
+    color: #8e8e8e;
+    display: block;
+    overflow: hidden;
+}
+
+.personal-info li {
+    margin-bottom: 10px;
+}
+
+.personal-info {
+    list-style: none;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.profile-view {
+    position: relative;
+}
+
+    .profile-view .profile-img-wrap {
+        height: 120px;
+        width: 120px;
+    }
+
+    .profile-view .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-view .profile-basic {
+        margin-right: 140px;
+        padding-left: 50px;
+    }
+
+    .profile-view .pro-edit {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+
+.edit-icon {
+    background-color: #eee;
+    border: 1px solid #e3e3e3;
+    border-radius: 24px;
+    color: #bbb;
+    float: left;
+    font-size: 12px;
+    line-height: 24px;
+    min-height: 26px;
+    text-align: center;
+    width: 26px;
+}
+
+    .edit-icon:hover {
+        background-color: #346CB0;
+        border-color: #346CB0;
+        color: #fff;
+    }
+
+.staff-msg {
+    margin-top: 30px;
+}
+
+.profile-info-left {
+    border-left: 2px dashed #ccc;
+    height:120px;
+}
+
+.avatar-box {
+    float: right;
+}
+
+@media only screen and (max-width: 991.98px) {
+    .profile-info-left {
+        border-left: none;
+        border-bottom: 2px dashed #ccc;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+    .profile-info-left {
+        border-left: none;
+        border-bottom: 2px dashed #ccc;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    .profile-view .profile-basic {
+        margin-right: 0;
+        padding-left: 0;
+    }
+
+    .profile-img-wrap {
+        position: relative;
+        margin: 0 auto;
+    }
+
+    .profile-info-left {
+        text-align: center;
+    }
+
+    .profile-basic {
+        margin-right: 0;
+        margin-top: 15px;
+    }
+}
+
+
+.parent-employee-detail {
+    padding: 10px
+}
+
+.space-emp-details {
+    margin-right: 40px !important;
+}
+
+.profile-firstrow-margin {
+    margin-right: 10px !important;
+    margin-top: 10px !important;
+}
+
+
+
+
+/*Employee profile css*/
+
+.md-dark {
+    color: rgba(23,31,35,.24);
+}
+
+    .md-dark svg {
+        fill: rgba(23,31,35,.24);
+    }
+
+.pmd-icon-xs {
+    display: inline-flex;
+    font-size: 18px;
+}
+
+.pmd-icon-sm {
+    display: inline-flex;
+    font-size: 24px;
+}
+
+.pmd-icon-lg {
+    display: inline-flex;
+    font-size: 48px;
+}
+
+    .pmd-icon-lg svg {
+        height: 48px;
+    }
+
+.pmd-card .card-body {
+    padding: 0 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.pmd-card .card-title {
+    margin-bottom: .5rem;
+}
+
+.pmd-card .card-subtitle {
+    font-size: .875rem;
+    line-height: 2;
+    color: rgba(23,31,35,.64);
+}
+
+
+.details-tab .card-subtitle {
+    padding-top: 7px !important;
+}
+
+.details-tab a {
+    color: rgba(23,31,35,.87);
+    text-decoration: none;
+    outline: 0;
+}
+
+.title-label {
+    color: rgba(23,31,35,.64);
+    font-size: .875rem;
+}
+
+.pmd-list-title {
+    font-weight: bold;
+    color: rgba(23,31,35,.87);
+    font-size: 14px;
+}
+
+.add-dialog .modal-header:after {
+    content: "";
+    background-color: #3075BA;
+    border-radius: 2px;
+    width: 60px;
+    height: 4px;
+    position: absolute;
+    bottom: -3px;
+}
+
+.add-dialog .modal-header.pmd-modal-border {
+    box-shadow: 0 2px 4px 0 rgba(23,31,35,.06);
+    border-bottom: none !important;
+    border-radius: 2px;
+    position: relative;
+}
+
+.details-tab {
+    margin-top: 24px;
+    padding-bottom: 16px;
+    border-bottom: solid 1px #dee2e6;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+    .details-tab:last-child {
+        border: none;
+    }
+
+    .details-tab .card-title {
+        margin-bottom: 0;
+        color: #346CB0;
+        font-size: 17px!important;
+    }
+
+    .details-tab .pmd-list-subtitle {
+        margin-bottom: 0;
+        color: rgba(23,31,35,.64);
+        font-size: .875rem;
+    }
+
+    .details-tab .pmd-list-title {
+        margin-bottom: 16px;
+    }
+
+    .details-tab .media-card {
+        border: 1px solid rgba(23,31,35,.12);
+        padding: 1rem 1rem 0 1rem;
+        margin: .5rem;
+        border-radius: 2px;
+    }
+
+        .details-tab .media-card .media-title {
+            color: rgba(23,31,35,.87);
+            font-size: 17px !important;
+        }
+
+    .details-tab .card-row {
+        margin-left: -.5rem;
+        margin-right: -.5rem;
+    }
+
+@media only screen and (max-width:767px) {
+    .media-card {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+        .media-card i {
+            margin-bottom: 5px;
+        }
+
+        .media-card .btn {
+            position: absolute;
+            right: 20px;
+        }
+}
+
+@media (min-width: 768px) {
+    .mr-md-3, .mx-md-3 {
+        margin-left: 1rem !important;
+    }
+}
+/*Employee profile css*/
+
+

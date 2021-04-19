@@ -1,0 +1,64 @@
+﻿@model MasterFacility.Data.Models.Grants.implementers
+@using Westwind.Globalization
+
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Edit" data-fouc data-ajax="true" id="modalForm" data-ajax-method="POST" data-ajax-success="onSuccessHandler(this,data,true,false,loadImplementer)" data-ajax-begin="onLoadingHandler(this)">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="id" class="control-label"></label>
+                <input asp-for="id" readonly class="form-control" />
+                <span asp-validation-for="id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="abbreviation" class="control-label"></label>
+                <input asp-for="abbreviation" readonly class="form-control" />
+                <span asp-validation-for="abbreviation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="name" class="control-label"></label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="namedari" class="control-label"></label>
+                <input asp-for="namedari" class="form-control" />
+                <span asp-validation-for="namedari" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="namepashto" class="control-label"></label>
+                <input asp-for="namepashto" class="form-control" />
+                <span asp-validation-for="namepashto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="registerationdate" class="control-label"></label>
+                <input asp-for="registerationdate" class="form-control" />
+                <span asp-validation-for="registerationdate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="afghanistanaddress" class="control-label"></label>
+                <input asp-for="afghanistanaddress" class="form-control" />
+                <span asp-validation-for="afghanistanaddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="otheraddress" class="control-label"></label>
+                <input asp-for="otheraddress" class="form-control" />
+                <span asp-validation-for="otheraddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="website" class="control-label"></label>
+                <input asp-for="website" class="form-control" />
+                <span asp-validation-for="website" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="isactive" /> @Html.DisplayNameFor(model => model.isactive)
+                </label>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">@DbRes.T("Save", "Common")</button>
+            </div>
+        </form>
+    </div>
+</div>
+
